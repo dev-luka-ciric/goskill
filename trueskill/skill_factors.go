@@ -1,9 +1,9 @@
 package trueskill
 
 import (
-	"github.com/mafredri/go-trueskill/collection"
-	"github.com/mafredri/go-trueskill/factor"
-	"github.com/mafredri/go-trueskill/schedule"
+	"goskill/collection"
+	"goskill/factor"
+	"goskill/schedule"
 )
 
 type skillFactors struct {
@@ -15,7 +15,7 @@ type skillFactors struct {
 	greatherThanOrWithinFactors              []factor.Factor
 }
 
-func buildSkillFactors(ts Config, players []Player, draws []bool, varBag *collection.DistributionBag) (skillFactors, []int, factor.List) {
+func buildSkillFactors(ts Config, players []Rating, draws []bool, varBag *collection.DistributionBag) (skillFactors, []int, factor.List) {
 	gf := factor.NewGaussianFactors()
 	var sf skillFactors
 	var factorList factor.List

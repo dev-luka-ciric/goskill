@@ -1,6 +1,6 @@
 # trueskill
 
-[![Build Status](https://travis-ci.org/mafredri/go-trueskill.svg)](https://travis-ci.org/mafredri/go-trueskill) [![GoDoc](https://godoc.org/mafredri/go-trueskill?status.svg)](https://godoc.org/github.com/mafredri/go-trueskill)
+[![Build Status](https://travis-ci.org/mafredri/go-trueskill.svg)](https://travis-ci.org/mafredri/go-trueskill) [![GoDoc](https://godoc.org/mafredri/go-trueskill?status.svg)](https://godoc.org/goskill)
 
 This library implements the [TrueSkill™](http://research.microsoft.com/en-us/projects/trueskill/) ranking system (by Microsoft) in Go.
 

@@ -3,12 +3,8 @@ package trueskill
 import (
 	"math"
 
-	"github.com/mafredri/go-trueskill/gaussian"
+	"goskill/gaussian"
 )
-
-func drawProbability(beta, drawMargin, totalPlayers float64) float64 {
-	return 2*gaussian.NormCdf(drawMargin/(math.Sqrt(totalPlayers)*beta)) - 1
-}
 
 func drawMargin(beta, drawProb, totalPlayers float64) float64 {
 	// totalPlayers represents the total number of players for both team A

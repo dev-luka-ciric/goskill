@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/mafredri/go-trueskill/collection"
-	"github.com/mafredri/go-trueskill/gaussian"
-	"github.com/mafredri/go-trueskill/schedule"
+	"goskill/collection"
+	"goskill/gaussian"
+	"goskill/schedule"
 )
 
 // Constants for the TrueSkill ranking system.
@@ -114,7 +114,7 @@ func New(opts ...Option) Config {
 // players based on game configuration and draw status.
 // For a N-player game, the draws parameter should have length n-1, where draws[i]
 // represents whether player[i] and player[i+1] are in draw.
-func (ts Config) AdjustSkillsWithDraws(players []Player, draws []bool) (newSkills []Player, probability float64) {
+func (ts Config) AdjustSkillsWithDraws(players []Rating, draws []bool) (newSkills []Rating, probability float64) {
 	// panic if draws slice length is not as expected
 	if len(draws) != len(players)-1 {
 		panic(fmt.Sprintf(
@@ -137,7 +137,7 @@ func (ts Config) AdjustSkillsWithDraws(players []Player, draws []bool) (newSkill
 	probability = math.Exp(logZ)
 
 	for _, id := range skillIndex {
-		newSkills = append(newSkills, Player{Gaussian: varBag.Get(id)})
+		newSkills = append(newSkills, Rating{Gaussian: varBag.Get(id)})
 	}
 
 	return newSkills, probability
@@ -148,7 +148,7 @@ func (ts Config) AdjustSkillsWithDraws(players []Player, draws []bool) (newSkill
 // This function can only accept draw as bool which means all players have the
 // same ranking. If you need to accept individual player draw state, please call
 // AdjustSkillWithDraws.
-func (ts Config) AdjustSkills(players []Player, draw bool) (newSkills []Player, probability float64) {
+func (ts Config) AdjustSkills(players []Rating, draw bool) (newSkills []Rating, probability float64) {
 	draws := make([]bool, len(players)-1)
 	for i := range draws {
 		draws[i] = draw
@@ -162,7 +162,7 @@ func (ts Config) AdjustSkills(players []Player, draw bool) (newSkills []Player, 
 //
 // Only two player match quality is supported at this time. Minus one is
 // returned if the match-up is unsupported.
-func (ts Config) MatchQuality(players []Player) float64 {
+func (ts Config) MatchQuality(players []Rating) float64 {
 	if len(players) > 2 {
 		return -1
 	}
@@ -170,16 +170,16 @@ func (ts Config) MatchQuality(players []Player) float64 {
 	return calculate2PlayerMatchQuality(ts, players[0], players[1])
 }
 
-// NewPlayer returns a new player with the mu and sigma from the game
+// NewRating returns a new player with the mu and sigma from the game
 // configuration.
-func (ts Config) NewPlayer() Player {
-	return NewPlayer(ts.mu, ts.sigma)
+func (ts Config) NewRating() Rating {
+	return NewRating(ts.mu, ts.sigma)
 }
 
 // TrueSkill returns the conservative TrueSkill of a player. The maximum
 // TrueSkill is two times mu, in the default configuration a value between
 // zero and fifty is returned.
-func (ts Config) TrueSkill(p Player) float64 {
+func (ts Config) TrueSkill(p Rating) float64 {
 	trueSkill := p.Mu() - (ts.mu/ts.sigma)*p.Sigma()
 
 	return math.Min(ts.mu*2, math.Max(0, trueSkill))
