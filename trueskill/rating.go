@@ -3,7 +3,7 @@ package trueskill
 import (
 	"fmt"
 
-	"goskill/gaussian"
+	"github.com/dev-luka-ciric/goskill/gaussian"
 )
 
 // Rating is a player with a certain skill (mu, sigma).

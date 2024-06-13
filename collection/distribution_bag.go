@@ -1,6 +1,6 @@
 package collection
 
-import "goskill/gaussian"
+import "github.com/dev-luka-ciric/goskill/gaussian"
 
 // DistributionBag is a storage for gaussian distributions.
 type DistributionBag struct {

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"math"
 
-	"goskill/collection"
-	"goskill/gaussian"
-	"goskill/schedule"
+	"github.com/dev-luka-ciric/goskill/collection"
+	"github.com/dev-luka-ciric/goskill/gaussian"
+	"github.com/dev-luka-ciric/goskill/schedule"
 )
 
 // Constants for the TrueSkill ranking system.

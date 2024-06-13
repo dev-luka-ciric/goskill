@@ -3,8 +3,8 @@ package factor
 import (
 	"math"
 
-	"goskill/collection"
-	"goskill/gaussian"
+	"github.com/dev-luka-ciric/goskill/collection"
+	"github.com/dev-luka-ciric/goskill/gaussian"
 )
 
 // GaussianFactors is used to perform all skill related gaussian operations and

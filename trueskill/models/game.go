@@ -2,9 +2,10 @@ package models
 
 import (
 	"fmt"
-	"goskill/trueskill"
 	"math"
 	"slices"
+
+	"github.com/dev-luka-ciric/goskill/trueskill"
 )
 
 type Game struct {

@@ -3,7 +3,7 @@ package factor
 import (
 	"math"
 
-	"goskill/gaussian"
+	"github.com/dev-luka-ciric/goskill/gaussian"
 )
 
 // VGreaterThan returns the additive correction for a single-sided truncated

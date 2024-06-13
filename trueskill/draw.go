@@ -3,7 +3,7 @@ package trueskill
 import (
 	"math"
 
-	"goskill/gaussian"
+	"github.com/dev-luka-ciric/goskill/gaussian"
 )
 
 func drawMargin(beta, drawProb, totalPlayers float64) float64 {

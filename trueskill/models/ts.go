@@ -1,7 +1,7 @@
 package models
 
 import (
-	"goskill/trueskill"
+	"github.com/dev-luka-ciric/goskill/trueskill"
 )
 
 var ts = trueskill.New(trueskill.DrawProbabilityZero())

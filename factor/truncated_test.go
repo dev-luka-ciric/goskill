@@ -3,7 +3,7 @@ package factor
 import (
 	"testing"
 
-	"goskill/mathextra"
+	"github.com/dev-luka-ciric/goskill/mathextra"
 )
 
 func TestVGreaterThan(t *testing.T) {

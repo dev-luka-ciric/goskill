@@ -3,7 +3,7 @@ package gaussian
 import (
 	"testing"
 
-	"goskill/mathextra"
+	"github.com/dev-luka-ciric/goskill/mathextra"
 )
 
 func TestNormCdf(t *testing.T) {

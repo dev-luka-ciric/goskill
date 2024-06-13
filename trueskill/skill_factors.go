@@ -1,9 +1,9 @@
 package trueskill
 
 import (
-	"goskill/collection"
-	"goskill/factor"
-	"goskill/schedule"
+	"github.com/dev-luka-ciric/goskill/collection"
+	"github.com/dev-luka-ciric/goskill/factor"
+	"github.com/dev-luka-ciric/goskill/schedule"
 )
 
 type skillFactors struct {

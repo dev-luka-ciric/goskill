@@ -3,7 +3,7 @@ package collection
 import (
 	"testing"
 
-	"goskill/gaussian"
+	"github.com/dev-luka-ciric/goskill/gaussian"
 )
 
 func TestDistributionBag(t *testing.T) {

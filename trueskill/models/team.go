@@ -3,7 +3,7 @@ package models
 import (
 	"math"
 
-	"goskill/trueskill"
+	"github.com/dev-luka-ciric/goskill/trueskill"
 )
 
 type Team struct {

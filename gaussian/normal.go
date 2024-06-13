@@ -3,7 +3,7 @@ package gaussian
 import (
 	"math"
 
-	"goskill/mathextra"
+	"github.com/dev-luka-ciric/goskill/mathextra"
 )
 
 // NormCdf returns the cumulative gaussian distribution (cdf) at the point of interest.
